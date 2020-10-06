@@ -17,10 +17,10 @@ class CreateActapartidoTable extends Migration
             $table->integer('id_acta')->unsigned();
             $table->integer('id_partido')->unsigned();
             $table->primary(['id_acta', 'id_partido']);
-            $table->integer('presidencia');
-            $table->integer('diputado');
+            $table->integer('cant_votos_pres');
+            $table->integer('cant_votos_dip');
             $table->foreign('id_acta')->references('id')->on('actas');
-            $table->foreign('id_partido')->references('id')->on('partido');
+            $table->foreign('id_partido')->references('id')->on('partidos');
         });
     }
 

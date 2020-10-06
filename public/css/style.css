@@ -1,0 +1,25 @@
+
+#fondo{
+    background: rgba(153, 151, 151, 0.315);
+    border-radius: 15px;
+    
+}
+
+#texto{
+    color: white;
+    font-weight: bold;
+}
+
+#boton{
+    height: 15%;
+    color: white;
+    font-weight: bold;
+}
+
+body{
+  background-image: url('https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/fbbbdfc8-1893-4160-a400-ae9563b3b7ae/dacyvla-db1ec0f0-ce4b-4399-8bad-a770ae0a419e.jpg/v1/fill/w_1024,h_768,q_75,strp/bandera_de_bolivia_grunge_by_dexillum_dacyvla-fullview.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOiIsImlzcyI6InVybjphcHA6Iiwib2JqIjpbW3siaGVpZ2h0IjoiPD03NjgiLCJwYXRoIjoiXC9mXC9mYmJiZGZjOC0xODkzLTQxNjAtYTQwMC1hZTk1NjNiM2I3YWVcL2RhY3l2bGEtZGIxZWMwZjAtY2U0Yi00Mzk5LThiYWQtYTc3MGFlMGE0MTllLmpwZyIsIndpZHRoIjoiPD0xMDI0In1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmltYWdlLm9wZXJhdGlvbnMiXX0.tikp2iwcFtVn9rIlOJbkM-ZsL3rIOEVAhE9UHybHpnw');
+  background-position: 50;
+  background-size: 100vw 100vh;
+  background-attachment: fixed;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}

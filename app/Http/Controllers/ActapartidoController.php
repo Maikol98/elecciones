@@ -17,11 +17,18 @@ class ActapartidoController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
+
+    // $table->integer('id_acta')->unsigned();
+    //         $table->integer('id_partido')->unsigned();
+    //         $table->primary(['id_acta', 'id_partido']);
+    //         $table->integer('cant_votos_pres');
+    //         $table->integer('cant_votos_dip');
+
     public function store(Request $request)
     {
-        $partido = Partido::where('nombre',$request->input('nombre'))->get();
+        $partido = Partido::where('nombre',$request->input('nombre'))->first();
 
-        $acta = Actas::where('codigo', $request->input('codigo'))->get();
+        $acta = Actas::where('codigo', $request->input('codigo'))->first();
 
         $actapartido = new Actaspartido($request->all());
         $actapartido->id_acta = $acta->id;
@@ -58,9 +65,6 @@ class ActapartidoController extends Controller
     }
 
     public function conteoDepartemento($departemento){
-        // $id_recinto = Recintos::where('departamento',$departemento)->pluck('id');
-        // $id_mesa = mesa::where('id_recinto', $id_recinto)->pluck('id');
-        // $id_acta = acta::where('id_mesa',$id_mesa)->pluck('id');
         $votos = DB::table('actapartido')
             ->join('actas','actapartido.id_acta','=','actas.id')
             ->join('mesa','actas.id_mesa','=','mesa.id')
@@ -71,10 +75,5 @@ class ActapartidoController extends Controller
             ->get();
         return response()->json($votos, 200);
     }
-
-    public function conteoProvincia($provincia){
-
-    }
-
 
 }

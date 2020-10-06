@@ -25,6 +25,12 @@ class ActasController extends Controller
      */
     public function store(Request $request)
     {
+        $nombreLocalidad = $request->input('Localidad');
+
+        $Localidad = Canton::where('nombre', $nombreLocalidad)->get();
+
+        $Localidad->nombre;
+        
         $actas = new Actas($request->all());
         $actas->voto_nulo = 0;
         $actas->voto_blanco = 0;

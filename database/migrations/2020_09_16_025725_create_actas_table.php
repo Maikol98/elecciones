@@ -17,9 +17,9 @@ class CreateActasTable extends Migration
             $table->increments('id');
             $table->bigInteger('codigo');
             $table->string('imagen');
-            $table->integer('voto_nulo');
-            $table->integer('voto_blanco');
-            $table->integer('voto_valido');
+            $table->integer('nulo');
+            $table->integer('blanco');
+            $table->integer('valido');
             $table->integer('id_mesa')->unsigned();
             $table->foreign('id_mesa')->references('id')->on('mesa');
         });

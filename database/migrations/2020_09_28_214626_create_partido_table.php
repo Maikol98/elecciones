@@ -13,11 +13,12 @@ class CreatePartidoTable extends Migration
      */
     public function up()
     {
-        Schema::create('partido', function (Blueprint $table) {
+        Schema::create('partidos', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('nombre');
-            $table->string('presidencia');
-            $table->string('diputado');
+            $table->string('sigla');
+            $table->string('nombre_part');
+            $table->string('presidente');
+            $table->string('vice');
         });
     }
 

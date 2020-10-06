@@ -13,6 +13,19 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'homeController@home');
+
+Route::get('Departamento', 'homeController@votoDepartamento')->name('departamento');
+
+Route::post('Votos', 'DepartamentosController@votosDepartamentos')->name('departamento.voto');
+
+Route::get('Votos/provincias', 'ProvinciasController@votosProvinvias')->name('provincia.voto');
+
+Route::get('Provincia','homeController@votoProvincia')->name('provincia');
+
+Route::get('General', 'DepartamentosController@votosGeneral')->name('general');
+
+Route::get('Export', 'DepartamentosController@exportExcelDepartamento')->name('export.excel');
+
+Route::get('ExportView', 'DepartamentosController@export')->name('exportview.excel');
+

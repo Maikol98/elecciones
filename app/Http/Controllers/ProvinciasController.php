@@ -5,9 +5,25 @@ namespace App\Http\Controllers;
 use App\Provincias;
 use App\Municipios;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class ProvinciasController extends Controller
 {
+
+    public function votosProvinvias(Request $request){
+        $votos = DB::table('actapartido')
+            ->join('partidos','actapartido.id_partido','=','partidos.id')
+            ->join('actas','actapartido.id_acta','=','actas.id')
+            ->join('mesa','actas.id_mesa','=','mesa.id')
+            ->join('recintos','mesa.id_recinto','=','recintos.id')
+            ->select('partidos.nombre_part','partidos.sigla', DB::raw('SUM(actapartido.cant_votos_pres) as cantidad'))
+            ->where('recintos.provincia',$request->input('provincia'))
+            ->groupBy('partidos.nombre_part','partidos.sigla')->orderBy('cantidad', 'desc')
+            ->get();
+
+        return view('Graficos/graficoprov', compact('votos'));
+    }
+
     /**
      * Display a listing of the resource.
      *

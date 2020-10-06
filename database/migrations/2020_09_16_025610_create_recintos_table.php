@@ -17,7 +17,7 @@ class CreateRecintosTable extends Migration
             $table->increments('id');
             $table->string('nombre');
             $table->string('ubicacion');
-            $table->string('departemento');
+            $table->string('departamento');
             $table->string('provincia');
             $table->string('municipio');
             $table->string('canton');

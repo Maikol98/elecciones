@@ -12,13 +12,13 @@ class CreateMesaTable extends Migration
      * @return void
      */
     public function up()
-    {
+    {   //270
         Schema::create('mesa', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('numero');
+            $table->integer('codigo');
             $table->string('rango');
             $table->integer('capacidad');
-            $table->date('fecha');
             $table->integer('id_recinto')->insigned();
             $table->foreign('id_recinto')->references('id')->on('recintos');
         });
